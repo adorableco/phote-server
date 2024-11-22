@@ -1,6 +1,7 @@
 # ✏️ phote-server 🥔
 나만의 오답노트를 쉽고 빠르게! Phote ✏️🥔
-<img src="https://github.com/user-attachments/assets/20246909-a62f-44d6-8288-8a888060babc" />
+<img src="https://github.com/user-attachments/assets/3470dda3-79f1-4ea7-9283-29c78aafcf86" />
+
 
 ## 👩‍👧‍👧 Our Team
 
@@ -19,22 +20,27 @@
 <img src="https://github.com/user-attachments/assets/376c1165-258b-45b2-852e-32e69ca787e6" />
 
 ## 🌳 Server Architecture
-<img src="https://github.com/user-attachments/assets/e61704e7-68eb-42da-a06f-dcb135f7b288" />
+<img src="https://github.com/user-attachments/assets/6d48de20-41c0-4d32-b0c6-9cfe6ed573cd" />
+
+## 🌳 개발 환경
+
+<img width="1131" alt="개발환경"  src="https://github.com/user-attachments/assets/63e0cc44-7395-4ca6-9598-c2be5805804e">
+
 
 ## 🌳 Branch
 
 🌱 git branch 전략
 
-`main branch` : 배포 단위 branch
+`release branch` : 배포 단위 branch
 
-`develop branch` : 주요 개발 branch, main merge 전 거치는 branch
+`develop branch` : 주요 개발 branch, release merge 전 거치는 branch
 
 `name/swm-number branch`: 각자 개발 branch, number는 Linear issue number
 
 ### 🌳 branch 구조
 
 ```jsx
-- main
+- release
 - develop
    └── name/swm-number
 ```
