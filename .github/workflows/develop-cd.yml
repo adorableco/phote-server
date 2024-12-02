@@ -58,7 +58,7 @@ jobs:
             - name: Deploy
               uses: appleboy/ssh-action@v0.1.4
               env:
-                  COMPOSE: "/home/ubuntu/docker-compose.yml"
+                  COMPOSE: "/home/ubuntu/docker-compose-prod.yml"
               with:
                   host: ${{ secrets.DEV_HOST }}
                   username: ${{ secrets.USERNAME }}

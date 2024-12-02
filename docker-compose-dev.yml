@@ -1,0 +1,51 @@
+services:
+    phote-server:
+        depends_on:
+            - phote-mysql
+            - phote-redis
+        image: adorableco/phote:latest
+        restart: unless-stopped
+        container_name: phote-server
+        env_file:
+            -   .env
+        environment:
+            - TZ=Asia/Seoul
+        ports:
+            - "8080:8080"
+        networks:
+            - phote-network
+
+    phote-redis:
+        image: redis:6.2.6-alpine
+        restart: unless-stopped
+        container_name: phote-redis
+        ports:
+            -   "6379:6379"
+        volumes:
+            - /var/lib/docker/volumes/phote-redis-volume/_data:/data
+        networks:
+            - phote-network
+
+    phote-mysql:
+        image: mysql:latest
+        restart: unless-stopped
+        container_name: phote-mysql
+        environment:
+            MYSQL_DATABASE: 'phote-database'
+            MYSQL_USER: 'admin'
+            MYSQL_PASSWORD: 'password'
+            MYSQL_ROOT_PASSWORD: 'password'
+        ports:
+            -   "3306:3306"
+        volumes:
+            - phote-mysql-volume:/var/lib/mysql
+        networks:
+            - phote-network
+
+volumes:
+    phote-mysql-volume:
+    phote-redis-volume:
+
+networks:
+    phote-network:
+        external: true
